@@ -27,7 +27,7 @@ int main() {
 }
 ```
 
-> ![Screenshot guided 1](P2output/Guided2Nomor1.png)
+> ![Screenshot guided 1](P2output/Guided2Nomor1.PNG)
 
 Penjelasan
 Program ini merupakan contoh penggunaan array dan perulangan for di C++. Di dalam program, sebuah array bernama nilai berisi lima elemen yaitu 1 sampai 5. Melalui perulangan for, program menampilkan setiap elemen array satu per satu ke layar. Variabel i digunakan sebagai indeks untuk mengakses elemen ke-0 hingga ke-4 pada array. Setiap iterasi akan mencetak posisi elemen (Element ke-i) beserta nilainya. Setelah semua elemen ditampilkan, program selesai dijalankan.
@@ -55,7 +55,7 @@ int main() {
 }
 ```
 
-> ![Screenshot guided 2](P2output/Guided2Nomor2.png)
+> ![Screenshot guided 2](P2output/Guided2Nomor2.PNG)
 
 Penjelasan
 Program ini merupakan contoh penggunaan array dua dimensi (matriks) di C++. Di dalam program, dibuat sebuah matriks berukuran 3x3 yang berisi angka 1 sampai 9. Dua perulangan bersarang (for) digunakan untuk menampilkan elemen-elemen matriks ke layar. Perulangan luar (i) mengatur baris, sedangkan perulangan dalam (j) mengatur kolom. Setiap elemen ditampilkan dengan spasi, dan setelah satu baris selesai dicetak, program menambahkan endl untuk pindah ke baris berikutnya. Hasilnya, matriks akan ditampilkan dalam bentuk tabel 3x3 di layar.
@@ -82,7 +82,7 @@ int main() {
 }
 ```
 
-> ![Screenshot guided 3](P2output/Guided2Nomor3.png)
+> ![Screenshot guided 3](P2output/Guided2Nomor3.PNG)
 
 Penjelasan
 Program ini merupakan contoh penggunaan pointer di C++. Variabel umur diset dengan nilai 25, lalu dibuat pointer p_umur yang menyimpan alamat memori dari variabel umur menggunakan operator &. Ketika program dijalankan, ia menampilkan beberapa informasi: nilai asli umur, alamat memorinya, nilai yang disimpan di pointer (p_umur), serta nilai yang diakses melalui pointer menggunakan operator dereference (*p_umur). Selain itu, program juga menampilkan alamat memori tempat pointer p_umur itu sendiri disimpan. Program ini membantu memahami bagaimana pointer bekerja dalam mengakses dan mereferensikan data di memori.
@@ -113,7 +113,7 @@ int main(){
 }
 ```
 
-> ![Screenshot guided 4](P2output/Guided2Nomor4.png)
+> ![Screenshot guided 4](P2output/Guided2Nomor4.PNG)
 
 Penjelasan
 Program ini menunjukkan cara mengakses elemen array menggunakan pointer di C++. Pertama, array data berisi lima nilai yaitu 10, 20, 30, 40, dan 50. Pointer p_data kemudian diinisialisasi untuk menunjuk ke elemen pertama array tersebut. Program menampilkan dua cara mengakses isi array: yang pertama dengan cara biasa menggunakan indeks data[i], dan yang kedua menggunakan pointer dengan ekspresi *(p_data + i). Pada ekspresi ini, pointer bergerak ke elemen berikutnya dengan menambah nilai i, lalu operator * digunakan untuk mengambil nilai dari alamat tersebut. Hasilnya, kedua cara menghasilkan output yang sama, namun cara kedua memperlihatkan bagaimana pointer dapat digunakan untuk menjelajahi elemen-elemen array.
@@ -143,7 +143,7 @@ int main() {
 }
 ```
 
-> ![Screenshot guided 5](P2output/Guided2Nomor5.png)
+> ![Screenshot guided 5](P2output/Guided2Nomor5.PNG)
 
 Penjelasan
 Program ini menunjukkan perbedaan antara string array dan string pointer di C++. Variabel pesan_array menyimpan string "Nasi Padang" sebagai array karakter yang dapat diubah isinya, sedangkan pesan_pointer menunjuk ke string literal "Ayam Bakar 23" yang hanya bisa dibaca. Program menampilkan kedua string tersebut, lalu mengubah karakter pertama pada pesan_array menjadi huruf kecil ‘h’, yang diperbolehkan karena array bersifat mutable. Selanjutnya, pointer pesan_pointer diarahkan untuk menunjuk ke string lain yaitu "Sarinah". Hasilnya menunjukkan bahwa isi array dapat diubah langsung, sedangkan pointer tidak bisa mengubah isi string literal, tetapi bisa diarahkan ke string lain.
@@ -175,7 +175,7 @@ int main() {
 }
 ```
 
-> ![Screenshot guided 6](P2output/Guided2Nomor6.png)
+> ![Screenshot guided 6](P2output/Guided2Nomor6.PNG)
 
 Penjelasan
 Program ini merupakan contoh penggunaan fungsi dan prosedur di C++. Fungsi tambah(int a, int b) digunakan untuk menghitung hasil penjumlahan dua bilangan dan mengembalikan nilainya menggunakan return. Sementara itu, prosedur tampilkanHasil(int a, int b, int hasil) hanya menampilkan hasil penjumlahan tanpa mengembalikan nilai apa pun. Di dalam fungsi main(), dua variabel angka1 dan angka2 masing-masing bernilai 10 dan 5. Keduanya dikirim ke fungsi tambah() untuk dihitung, lalu hasilnya disimpan dalam variabel hasilJumlah. Setelah itu, prosedur tampilkanHasil() dipanggil untuk menampilkan hasil penjumlahan tersebut ke layar.
@@ -203,7 +203,7 @@ int main()
 }
 ```
 
-> ![Screenshot guided 7](P2output/Guided2Nomor7.png)
+> ![Screenshot guided 7](P2output/Guided2Nomor7.PNG)
 
 Penjelasan
 Program ini menunjukkan penggunaan pointer untuk menukar nilai dua variabel di C++. Prosedur tukar(int *px, int *py) menerima dua parameter berupa alamat memori dari variabel a dan b. Di dalam prosedur, nilai yang ditunjuk oleh pointer px dan py ditukar menggunakan variabel sementara temp. Pada fungsi main(), variabel a bernilai 10 dan b bernilai 20. Sebelum pertukaran, program menampilkan nilai awal keduanya. Setelah memanggil tukar(&a, &b), nilai a dan b tertukar karena prosedur bekerja langsung pada alamat memorinya. Hasil akhirnya menunjukkan a = 20 dan b = 10.
@@ -231,7 +231,7 @@ int main()
 }
 ```
 
-> ![Screenshot guided 8](P2output/Guided2Nomor8.png)
+> ![Screenshot guided 8](P2output/Guided2Nomor8.PNG)
 
 Penjelasan
 Program ini merupakan contoh penggunaan call by reference untuk menukar nilai dua variabel di C++. Prosedur tukar(int &x, int &y) menggunakan parameter referensi (&), sehingga perubahan pada x dan y langsung memengaruhi variabel asli yang dikirim dari fungsi main(). Di dalam prosedur, nilai x disimpan sementara di variabel temp, kemudian x diisi dengan nilai y, dan y diisi dengan nilai temp, sehingga keduanya saling bertukar. Dalam fungsi main(), variabel a bernilai 10 dan b bernilai 20. Setelah memanggil tukar(a, b), nilai a dan b tertukar menjadi a = 20 dan b = 10.
@@ -298,7 +298,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot unguided Nomor 1](P2output/Laprak2Nomor1.png)
+> ![Screenshot unguided Nomor 1](P2output/Laprak2Nomor1.PNG)
 
 Penjelasan code
 Program ini berfungsi untuk melakukan transpose matriks 3x3 menggunakan bahasa C++. Di dalamnya terdapat dua prosedur: tampilkanMatriks() untuk menampilkan isi matriks, dan transposeMatriks() untuk menukar posisi baris dan kolom. Di fungsi main(), matriks awal berisi nilai 1–9 diinisialisasi, lalu hasil transpose disimpan pada matriks baru bernama matriksTranspose. Proses transpose dilakukan dengan menukar indeks menggunakan hasil[j][i] = asal[i][j], sehingga baris berubah menjadi kolom dan sebaliknya. Terakhir, hasilnya ditampilkan untuk menunjukkan perbedaan antara matriks awal dan matriks hasil transpose.
@@ -335,7 +335,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot unguided Nomor 2](P2output/Laprak2Nomor2.png)
+> ![Screenshot unguided Nomor 2](P2output/Laprak2Nomor2.PNG)
 
 Penjelasan code
 Program ini merupakan contoh penggunaan call by reference di C++ untuk mengubah nilai variabel secara langsung melalui prosedur. Variabel nilai diinisialisasi dengan angka 5, lalu ditampilkan sebagai nilai awal. Prosedur kuadratkan(int &x) menggunakan parameter referensi (&), sehingga ketika dipanggil dengan kuadratkan(nilai), perubahan pada x juga memengaruhi variabel asli nilai. Di dalam prosedur, nilai dikalikan dengan dirinya sendiri (x = x * x), menghasilkan nilai kuadratnya. Setelah prosedur dijalankan, program menampilkan hasilnya, yaitu nilai 25 sebagai hasil kuadrat dari 5.

@@ -286,7 +286,7 @@ int main(){
 ```
 
 > Output
-> ![Screenshot Nomor 1](output/Laprak1Nomor1.PNG)
+> ![Screenshot Nomor 1](P1output/Laprak1Nomor1.PNG)
 
 Program di atas merupakan contoh sederhana dalam bahasa C++ untuk melakukan operasi aritmatika dasar. Pertama, pengguna diminta memasukkan dua angka bertipe float, lalu program menampilkan hasil penjumlahan, pengurangan, perkalian, dan pembagian dari kedua angka tersebut. Untuk operasi pembagian, program menggunakan pengecekan if agar tidak terjadi kesalahan ketika pembagi bernilai nol. Jika angka kedua tidak sama dengan nol, hasil pembagian akan ditampilkan, sedangkan jika bernilai nol, program memberikan pesan khusus bahwa pembagian tidak bisa dilakukan. Dengan cara ini, program tidak hanya menghitung, tetapi juga menangani kondisi khusus secara aman.
 
@@ -350,7 +350,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot Nomor 2](output/Laprak1Nomor2.PNG)
+> ![Screenshot Nomor 2](P1output/Laprak1Nomor2.PNG)
 
 Program C++ ini berfungsi mengubah angka 0–100 menjadi tulisan dalam bahasa Indonesia. Fungsi stringsatuan() menangani berbagai kasus: angka 0 ditulis “nol”, angka 100 menjadi “seratus”, angka 1–9 langsung diambil dari array satuan, angka 10–19 ditangani khusus dengan pola “sepuluh”, “sebelas”, atau “... belas”, sedangkan angka puluhan 20–90 ditulis dengan pola “... puluh” ditambah satuannya jika ada. Pada fungsi main(), pengguna diminta memasukkan angka, lalu program mengecek apakah valid; jika ya, hasil angka dalam bentuk tulisan ditampilkan, jika tidak akan muncul pesan error.
 
@@ -398,7 +398,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot Nomor 3](output/Laprak1Nomor3.PNG)
+> ![Screenshot Nomor 3](P1output/Laprak1Nomor3.PNG)
 
 Program C++ ini digunakan untuk menampilkan pola berbentuk segitiga terbalik dengan angka dan tanda bintang di tengah. Pertama, pengguna memasukkan sebuah bilangan bulat n sebagai tinggi pola. Pada setiap baris, program menambahkan spasi sesuai dengan baris ke berapa agar pola rata ke kanan, kemudian mencetak angka menurun dari i sampai 1, diikuti tanda *, lalu mencetak angka naik kembali dari 1 sampai i. Setelah semua baris selesai, program menambahkan satu baris terakhir berisi spasi sebanyak n*2 diikuti satu tanda * di tengah. Hasil akhirnya adalah pola simetris dengan bintang sebagai pemisah di antara angka menurun dan angka menaik.
 
