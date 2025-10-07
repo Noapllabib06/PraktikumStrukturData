@@ -342,6 +342,6 @@ Program ini merupakan contoh penggunaan call by reference di C++ untuk mengubah 
 
 ## Referensi
 
-1.
-2.
-3.
+1. Sianipar, R. H. (2014). Pemrograman C++ Untuk Pemula (Vol. 1). Penerbit INFORMATIKA. https://books.google.com/books?hl=id&lr=&id=tQR2DwAAQBAJ&oi=fnd&pg=PA1&dq=pemrograman+c%2B%2B&ots=rEm8lyLHIR&sig=wmpxiLpPmn8dn5Q9vP9zY8XrsgQ
+
+2. Samala, A. D., Fajri, B. R., & Ranuarja, F. (2021). PEMROGRAMAN C++. UNP PRESS. https://books.google.com/books?hl=id&lr=&id=49ZbEAAAQBAJ&oi=fnd&pg=PA2&dq=pemrograman+c%2B%2B&ots=4sYIx_JYCx&sig=ouhrRQNOGTjAM3F2phz0_RIeUjY
