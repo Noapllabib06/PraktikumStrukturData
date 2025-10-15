@@ -227,9 +227,7 @@ Opsi 6 Tidak perlu menggunakan Screenshoot mandiri karena sudah digunakan pada o
 
 ## Unguided
 ## Nomor 1
-Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array
-dengan field nama, nim, uts, uas, tugas, dan nilai akhir. Nilai akhir diperoleh dari FUNGSI
-dengan rumus 0.3*uts+0.4*uas+0.3*tugas.
+buatlah single linked list untuk Antrian yang menyimpan data pembeli( nama dan pesanan). program memiliki beberapa menu seperti tambah antrian,  layani antrian(hapus), dan tampilkan antrian. \*antrian pertama harus yang pertama dilayani
 
 
 ```cpp
@@ -342,7 +340,7 @@ Case ini memanggil fungsi tampilkanAntrian(). Fungsi tersebut akan menelusuri se
 Tidak Perlu Output, Opsi ini digunakan untuk menghentikan program sehingga program menghentikan perulangan unutuk switch case lalu program berhenti.
 
 ### soal 2
-### Code 1 pelajaran.cpp
+Buatlah program kode untuk membalik (reverse) singly linked list (1-2-3 menjadi 3-2-1) 
 
 ```cpp
 #include <iostream>
