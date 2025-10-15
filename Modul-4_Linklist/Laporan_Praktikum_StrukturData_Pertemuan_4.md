@@ -3,7 +3,13 @@
 
 ## Dasar Teori
 
-Dalam pemrograman C++, modularitas digunakan untuk memecah program besar menjadi beberapa bagian agar lebih terstruktur dan mudah dikelola. Konsep ini diwujudkan melalui pemisahan kode ke dalam tiga jenis file, yaitu header file (.h) yang berisi deklarasi struktur dan fungsi, implementation file (.cpp) yang berisi isi fungsi, serta main file (main.cpp) yang menjadi titik awal eksekusi program. Dengan cara ini, program lebih mudah dipahami, diperbarui, dan digunakan kembali tanpa perlu menulis ulang seluruh kode.
+Dasar Teori
+
+Linked List adalah struktur data dinamis yang terdiri dari elemen-elemen (node) yang saling terhubung melalui pointer. Setiap node berisi dua bagian, yaitu data untuk menyimpan nilai dan pointer (next) yang menunjuk ke node berikutnya. Berbeda dengan array yang berukuran tetap, linked list bersifat fleksibel karena dapat menambah atau menghapus data kapan saja tanpa mengatur ulang seluruh elemen.
+
+Jenis yang digunakan pada praktikum ini adalah single linked list, di mana setiap node hanya memiliki satu pointer. Operasi utamanya meliputi penambahan data (insert) di depan, belakang, atau setelah node tertentu; penghapusan data (delete); pembaruan data (update); dan penampilan data (display). Selain itu, terdapat juga implementasi reverse, yaitu proses membalik urutan node dengan mengubah arah pointer menggunakan variabel bantu prev, curr, dan next.
+Linked list juga dapat digunakan untuk membentuk struktur data queue (antrian) yang bekerja dengan prinsip FIFO (First In, First Out). Operasinya meliputi enqueue (tambah antrian), dequeue (layani antrian), dan tampilkan antrian.
+Secara keseluruhan, linked list menunjukkan cara pengelolaan memori secara manual dengan pointer dalam C++, sekaligus memperkuat pemahaman konsep struktur data dinamis dan modularitas program melalui pembagian fungsi sesuai tugasnya.
 
 ## Guided
 
@@ -13,16 +19,13 @@ Dalam pemrograman C++, modularitas digunakan untuk memecah program besar menjadi
 #include <iostream>
 using namespace std;
 
-// Struktur Node
 struct Node {
     int data;
     Node* next;
 };
 
-// Pointer awal dan akhir
 Node* head = nullptr;
 
-// Fungsi untuk membuat node baru
 Node* createNode(int data) {
     Node* newNode = new Node();
     newNode->data = data;
@@ -30,7 +33,6 @@ Node* createNode(int data) {
     return newNode;
 }
 
-// Fungsi untuk insert di depan
 void insertDepan(int data) {
     Node* newNode = createNode(data);
     newNode->next = head;
@@ -68,8 +70,6 @@ void insertSetelah(int target, int dataBaru) {
         cout << "Data " << dataBaru << " berhasil disisipkan setelah " << target << ".\n";
     }
 }
-
-// ========== DELETE FUNCTION ==========
 void hapusNode(int data) {
     if (head == nullptr) {
         cout << "List kosong!\n";
@@ -79,7 +79,6 @@ void hapusNode(int data) {
     Node* temp = head;
     Node* prev = nullptr;
 
-    // Jika data di node pertama
     if (temp != nullptr && temp->data == data) {
         head = temp->next;
         delete temp;
@@ -87,13 +86,11 @@ void hapusNode(int data) {
         return;
     }
 
-    // Cari node yang akan dihapus
     while (temp != nullptr && temp->data != data) {
         prev = temp;
         temp = temp->next;
     }
 
-    // Jika data tidak ditemukan
     if (temp == nullptr) {
         cout << "Data " << data << " tidak ditemukan!\n";
         return;
@@ -104,7 +101,6 @@ void hapusNode(int data) {
     cout << "Data " << data << " berhasil dihapus.\n";
 }
 
-// ========== UPDATE FUNCTION ==========
 void updateNode(int dataLama, int dataBaru) {
     Node* temp = head;
     while (temp != nullptr && temp->data != dataLama) {
@@ -119,7 +115,6 @@ void updateNode(int dataLama, int dataBaru) {
     }
 }
 
-// ========== DISPLAY FUNCTION ==========
 void tampilkanList() {
     if (head == nullptr) {
         cout << "List kosong!\n";
@@ -135,7 +130,6 @@ void tampilkanList() {
     cout << "NULL\n";
 }
 
-// ========== MAIN PROGRAM ==========
 int main() {
     int pilihan, data, target, dataBaru;
 
@@ -243,228 +237,184 @@ dengan rumus 0.3*uts+0.4*uas+0.3*tugas.
 #include <string>
 using namespace std;
 
-struct Mahasiswa {
+struct Pembeli {
     string nama;
-    string nim;
-    float uts, uas, tugas, nilaiAkhir;
+    string pesanan;
+    Pembeli* next;
 };
 
-float hitungNilaiAkhir(float uts, float uas, float tugas) {
-    return (0.3 * uts) + (0.4 * uas) + (0.3 * tugas);
+Pembeli* front = nullptr;
+Pembeli* rear = nullptr;
+
+void tambahAntrian(string nama, string pesanan) {
+    Pembeli* baru = new Pembeli{nama, pesanan, nullptr};
+    if (rear == nullptr) {
+        front = rear = baru;
+    } else {
+        rear->next = baru;
+        rear = baru;
+    }
+    cout << "Antrian berhasil ditambahkan.\n";
+}
+
+void layaniAntrian() {
+    if (front == nullptr) {
+        cout << "Antrian kosong.\n";
+        return;
+    }
+    Pembeli* hapus = front;
+    cout << "Melayani: " << hapus->nama << " - " << hapus->pesanan << endl;
+    front = front->next;
+    if (front == nullptr) rear = nullptr;
+    delete hapus;
+}
+
+void tampilkanAntrian() {
+    if (front == nullptr) {
+        cout << "Antrian kosong.\n";
+        return;
+    }
+    Pembeli* temp = front;
+    cout << "Daftar Antrian:\n";
+    while (temp != nullptr) {
+        cout << temp->nama << " - " << temp->pesanan << endl;
+        temp = temp->next;
+    }
 }
 
 int main() {
-    Mahasiswa mhs[10];
-    int jumlah;
-
-    cout << "Masukkan jumlah mahasiswa (maksimal 10): ";
-    cin >> jumlah;
-
-    if (jumlah > 10) {
-        jumlah = 10;
-        cout << "Jumlah dibatasi hanya 10 mahasiswa.\n";
-    }
-    for (int i = 0; i < jumlah; i++) {
-        cout << "\nData mahasiswa ke-" << i + 1 << endl;
+    int pilihan;
+    string nama, pesanan;
+    do {
+        cout << "\nMenu Antrian Pembeli\n";
+        cout << "1. Tambah Antrian\n";
+        cout << "2. Layani Antrian\n";
+        cout << "3. Tampilkan Antrian\n";
+        cout << "4. Keluar\n";
+        cout << "Pilih menu: ";
+        cin >> pilihan;
         cin.ignore();
-        cout << "Nama   : ";
-        getline(cin, mhs[i].nama);
-        cout << "NIM    : ";
-        getline(cin, mhs[i].nim);
-        cout << "Nilai UTS   : ";
-        cin >> mhs[i].uts;
-        cout << "Nilai UAS   : ";
-        cin >> mhs[i].uas;
-        cout << "Nilai Tugas : ";
-        cin >> mhs[i].tugas;
-
-        mhs[i].nilaiAkhir = hitungNilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
-    }
-
-    //Pake "===" biar rapih :)
-    cout << "\n==========================================\n";
-    cout << "           DATA NILAI MAHASISWA           \n";
-    cout << "==========================================\n";
-    for (int i = 0; i < jumlah; i++) {
-        cout << "Mahasiswa ke-" << i + 1 << endl;
-        cout << "Nama        : " << mhs[i].nama << endl;
-        cout << "NIM         : " << mhs[i].nim << endl;
-        cout << "UTS         : " << mhs[i].uts << endl;
-        cout << "UAS         : " << mhs[i].uas << endl;
-        cout << "Tugas       : " << mhs[i].tugas << endl;
-        cout << "Nilai Akhir : " << mhs[i].nilaiAkhir << endl;
-        cout << "------------------------------------------\n";
-    }
-
+        switch (pilihan) {
+            case 1:
+                cout << "Nama pembeli: ";
+                getline(cin, nama);
+                cout << "Pesanan: ";
+                getline(cin, pesanan);
+                tambahAntrian(nama, pesanan);
+                break;
+            case 2:
+                layaniAntrian();
+                break;
+            case 3:
+                tampilkanAntrian();
+                break;
+            case 4:
+                cout << "Keluar program.\n";
+                break;
+            default:
+                cout << "Menu tidak valid.\n";
+        }
+    } while (pilihan != 4);
     return 0;
 }
 ```
 
-Output
-> ![Screenshot Unguided Nomor 1](P3output/Unguided3Nomor1.PNG)
+### Opsi 1 Tambah Antrian
+>Output
+> ![Screenshot Unguided Nomor 1 Opsi 1](P4output/Unguided4Nomor1Poin1.PNG)
 
-Program ini dibuat untuk menyimpan dan menampilkan data mahasiswa menggunakan bahasa C++. Data setiap mahasiswa disimpan dalam struct Mahasiswa yang berisi nama, NIM, nilai UTS, UAS, tugas, dan nilai akhir. Data beberapa mahasiswa disimpan dalam array dengan jumlah maksimal sepuluh orang. Nilai akhir dihitung menggunakan fungsi hitungNilaiAkhir() dengan rumus 0.3 * UTS + 0.4 * UAS + 0.3 * tugas. Melalui fungsi utama (main()), pengguna dapat memasukkan data mahasiswa, kemudian program akan menghitung dan menampilkan hasilnya secara otomatis. Program ini menggambarkan penerapan konsep struct, array, dan fungsi untuk pengelolaan data secara terstruktur dan efisien.
+Pada bagian ini, program meminta pengguna untuk memasukkan nama pembeli dan pesanan. Data tersebut kemudian dikirim ke fungsi tambahAntrian(). Fungsi ini membuat node baru bertipe Pembeli dan menambahkannya ke akhir antrian. Jika antrian masih kosong, node baru akan menjadi elemen pertama (front) sekaligus terakhir (rear). Jika sudah ada antrian sebelumnya, maka node baru akan dihubungkan ke elemen terakhir dan rear diperbarui agar menunjuk ke node tersebut. Setelah itu, muncul pesan bahwa antrian berhasil ditambahkan.
+
+### Opsi 2 Layani Antrian
+>Output
+> ![Screenshot Unguided Nomor 1 Opsi 2](P4output/Unguided4Nomor1Poin2.PNG)
+
+Bagian ini memanggil fungsi layaniAntrian() untuk melayani pembeli paling depan. Program akan menampilkan nama dan pesanan pembeli yang sedang dilayani, lalu menghapusnya dari antrian dengan cara memindahkan pointer front ke elemen berikutnya. Jika setelah dihapus antrian menjadi kosong, maka rear juga diset ke nullptr. Jika antrian kosong sejak awal, program menampilkan pesan bahwa tidak ada antrian yang bisa dilayani.
+
+### Opsi 3 Tampilkan Antrian
+>Output
+> ![Screenshot Unguided Nomor 1 Opsi 3](P4output/Unguided4Nomor1Poin3.PNG)
+
+Case ini memanggil fungsi tampilkanAntrian(). Fungsi tersebut akan menelusuri seluruh node mulai dari front hingga rear, menampilkan nama dan pesanan setiap pembeli yang masih menunggu giliran. Jika antrian kosong, program akan menampilkan pesan “Antrian kosong.”
+
+### Opsi 4 Tampilkan Antrian
+
+Tidak Perlu Output, Opsi ini digunakan untuk menghentikan program sehingga program menghentikan perulangan unutuk switch case lalu program berhenti.
 
 ### soal 2
 ### Code 1 pelajaran.cpp
 
 ```cpp
-#include "pelajaran.h"
 #include <iostream>
 using namespace std;
 
-pelajaran create_pelajaran(string namapel, string kodepel) {
-    pelajaran p;
-    p.namaMapel = namapel;
-    p.kodeMapel = kodepel;
-    return p;
-}
-
-//Heheeh pake " === " Biar Rapih Aja :)"
-void tampil_pelajaran(pelajaran pel) {
-    cout << "==============================" << endl;
-    cout << "        DATA PELAJARAN       " << endl;
-    cout << "==============================" << endl;
-    cout << "Nama Mata Kuliah : " << pel.namaMapel << endl;
-    cout << "Kode Mata Kuliah : " << pel.kodeMapel << endl;
-    cout << "==============================" << endl;
-}
-```
-
-### Code 2 pelajaran.h
-
-```cpp
-#ifndef PELAJARAN_H_INCLUDED
-#define PELAJARAN_H_INCLUDED
-
-#include <string>
-using namespace std;
-
-// ======== ADT Pelajaran ========
-struct pelajaran {
-    string namaMapel;
-    string kodeMapel;
+struct Node {
+    int data;
+    Node* next;
 };
 
-pelajaran create_pelajaran(string namapel, string kodepel);
-void tampil_pelajaran(pelajaran pel);
+void insert(Node*& head, int value) {
+    Node* baru = new Node{value, nullptr};
+    if (!head) {
+        head = baru;
+    } else {
+        Node* temp = head;
+        while (temp->next) temp = temp->next;
+        temp->next = baru;
+    }
+}
 
-#endif
-```
+void tampil(Node* head) {
+    Node* temp = head;
+    while (temp) {
+        cout << temp->data;
+        if (temp->next) cout << " -> ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
 
-### Code 3 main.cpp
-
-```cpp
-#include "pelajaran.h"
-#include <iostream>
-using namespace std;
+void reverse(Node*& head) {
+    Node* prev = nullptr;
+    Node* curr = head;
+    Node* next = nullptr;
+    while (curr) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    head = prev;
+}
 
 int main() {
-    string namapel = "Struktur Data";
-    string kodepel = "STD";
+    Node* head = nullptr;
+    insert(head, 1);
+    insert(head, 2);
+    insert(head, 3);
 
-    pelajaran pel = create_pelajaran(namapel, kodepel);
-    tampil_pelajaran(pel);
+    cout << "Linked list sebelum dibalik: ";
+    tampil(head);
+
+    reverse(head);
+
+    cout << "Linked list setelah dibalik: ";
+    tampil(head);
 
     return 0;
 }
 ```
 
 > Output
-> ![Screenshot Guided Nomor 2](P3output/Unguided3Nomor2.PNG)
+> ![Screenshot Guided Nomor 2](P4output/Unguided4Nomor2.PNG)
 
 
-Program ini merupakan contoh penerapan Abstract Data Type (ADT) sederhana dalam bahasa C++ yang berfungsi untuk menyimpan serta menampilkan informasi mengenai mata kuliah. Program dibagi menjadi tiga bagian utama, yaitu pelajaran.h, pelajaran.cpp, dan main.cpp, yang saling terhubung membentuk satu sistem yang terstruktur.
-Pada file pelajaran.h, terdapat deklarasi struktur pelajaran dengan dua atribut, yaitu namaMapel untuk nama mata kuliah dan kodeMapel untuk kode mata kuliah. File ini juga berisi deklarasi dua fungsi, yaitu create_pelajaran() untuk membuat data pelajaran baru dan tampil_pelajaran() untuk menampilkan data tersebut ke layar. File header ini berperan sebagai penghubung agar struktur dan fungsi dapat digunakan oleh file lain.
-Kemudian, pada pelajaran.cpp, kedua fungsi tersebut diimplementasikan. Fungsi create_pelajaran() digunakan untuk membuat objek bertipe pelajaran berdasarkan parameter nama dan kode mata kuliah yang diberikan, lalu mengembalikannya. Sedangkan tampil_pelajaran() bertugas menampilkan data mata kuliah dengan tampilan yang rapi menggunakan garis pembatas.
-Bagian utama program terdapat pada main.cpp, di mana dua variabel string digunakan untuk menyimpan nama dan kode mata kuliah. Nilai tersebut kemudian dikirim ke fungsi create_pelajaran() untuk membuat objek pelajaran, dan hasilnya ditampilkan melalui tampil_pelajaran(). Secara keseluruhan, program ini menunjukkan konsep pemrograman modular serta penerapan ADT yang memisahkan antara data dan fungsinya, sehingga program menjadi lebih terstruktur dan mudah dikelola.
+Program di atas merupakan implementasi linked list tunggal dalam C++. Struktur Node menyimpan data berupa bilangan bulat dan pointer next untuk menunjuk ke elemen berikutnya. Fungsi insert() menambahkan node baru di akhir list; jika list kosong, node baru menjadi head, sedangkan jika sudah ada, program menelusuri hingga node terakhir lalu menambahkannya di sana. Fungsi tampil() menampilkan seluruh isi list dari awal hingga akhir dengan tanda panah “→” di antara elemen. Fungsi reverse() membalik urutan node dengan memutar arah pointer menggunakan tiga variabel (prev, curr, next) sehingga elemen terakhir menjadi head baru. Dalam fungsi main(), program menambahkan data 1, 2, dan 3, menampilkan list sebelum dibalik (1 → 2 → 3), lalu membalik urutannya dan menampilkan hasilnya (3 → 2 → 1).
 
-## Nomor 3
-Buatlah program dengan ketentuan :
-- 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer
-- fungsi/prosedur yang menampilkan isi sebuah array integer 2D
-- fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu
-- fungsi/prosedur yang akan menukarkan isi dari variabel yang ditunjuk oleh 2 buah
-pointer
-
-
-```cpp
-#include <iostream>
-using namespace std;
-
-void tampilArray(int arr[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << arr[i][j] << "\t";
-        }
-        cout << endl;
-    }
-}
-
-void tukarPosisi(int arr1[3][3], int arr2[3][3], int baris, int kolom) {
-    int temp = arr1[baris][kolom];
-    arr1[baris][kolom] = arr2[baris][kolom];
-    arr2[baris][kolom] = temp;
-}
-
-void tukarPointer(int *p1, int *p2) {
-    int temp = *p1;
-    *p1 = *p2;
-    *p2 = temp;
-}
-
-int main() {
-    int A[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
-
-    int B[3][3] = {
-        {9, 8, 7},
-        {6, 5, 4},
-        {3, 2, 1}
-    };
-
-    cout << "Array A sebelum ditukar:\n";
-    tampilArray(A);
-    cout << "\nArray B sebelum ditukar:\n";
-    tampilArray(B);
-
-    tukarPosisi(A, B, 1, 1);
-
-    cout << "\nSetelah menukar elemen di posisi [1][1]:\n";
-    cout << "Array A:\n";
-    tampilArray(A);
-    cout << "\nArray B:\n";
-    tampilArray(B);
-
-    int x = 10, y = 20;
-    int *p1 = &x;
-    int *p2 = &y;
-
-    cout << "\nNilai sebelum ditukar melalui pointer:\n";
-    cout << "x = " << x << ", y = " << y << endl;
-
-    tukarPointer(p1, p2);
-
-    cout << "Nilai setelah ditukar melalui pointer:\n";
-    cout << "x = " << x << ", y = " << y << endl;
-
-    return 0;
-}
-```
-
-Output
-> ![Screenshot Unguided Nomor 3](P3output/Unguided3Nomor3.PNG)
-
-Program ini dibuat untuk menunjukkan penggunaan array dua dimensi (2D) dan pointer dalam bahasa C++. Di dalamnya terdapat dua buah array 2D berukuran 3x3 yang menyimpan bilangan integer, serta dua pointer yang menunjuk ke variabel bertipe integer. Program juga menggunakan beberapa fungsi untuk menampilkan isi array, menukar isi antar array pada posisi tertentu, serta menukar nilai variabel melalui pointer.
-Fungsi tampilArray() digunakan untuk menampilkan elemen-elemen array dalam bentuk tabel menggunakan dua perulangan bersarang. Fungsi tukarPosisi() berfungsi menukar nilai pada posisi tertentu antara dua array 2D, misalnya antara elemen A[1][1] dan B[1][1], dengan bantuan variabel sementara agar data tidak hilang saat penukaran. Selanjutnya, fungsi tukarPointer() digunakan untuk menukar nilai dua variabel integer melalui pointer dengan cara menukar nilai yang ditunjuk oleh kedua pointer tersebut.
-Dalam fungsi main(), program menampilkan isi array sebelum dan sesudah penukaran agar terlihat perubahan datanya. Selain itu, program juga menampilkan hasil pertukaran nilai antara dua variabel x dan y menggunakan pointer. Dengan demikian, program ini memperlihatkan penerapan konsep dasar manipulasi array 2D dan pointer dalam C++, serta cara penggunaan fungsi untuk memecah tugas program menjadi bagian-bagian yang lebih terstruktur dan mudah dipahami.
 
 
 ## Referensi
 
-1. Huda, A., Ardi, N., & Muabi, A. (2021). Pengantar coding berbasis C/C++. UNP PRESS. https://books.google.com/books?hl=id&lr=&id=G9dbEAAAQBAJ&oi=fnd&pg=PA129&dq=pemrograman+modular+c%2B%2B&ots=6eIIaNft7h&sig=ZKo25TGEsn8RMaSwHkno8LZHCZQ
+1. Samala, A. D., Fajri, B. R., & Ranuarja, F. (2021). PEMROGRAMAN C++. UNP PRESS. https://books.google.com/books?hl=id&lr=&id=49ZbEAAAQBAJ&oi=fnd&pg=PA2&dq=pemrograman+c%2B%2B&ots=4sYIx_JYCx&sig=ouhrRQNOGTjAM3F2phz0_RIeUjY
 
 2. Indahyanti, U., & Rahmawati, Y. (2020). Buku Ajar Algoritma Dan Pemrograman Dalam Bahasa C++. Umsida Press, 1-146. https://press.umsida.ac.id/index.php/umsidapress/article/view/978-623-6833-67-4

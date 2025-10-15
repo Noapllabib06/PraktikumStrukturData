@@ -63,7 +63,8 @@ int main(){
 }
 ```
 
-> ![Screenshot guided 1](P2output/Guided3Nomor1.PNG)
+> Output
+> ![Screenshot guided 1](P3output/Guided3Nomor1.PNG)
 
 Penjelasan
 Program ini merupakan contoh penggunaan array dan perulangan for di C++. Di dalam program, sebuah array bernama nilai berisi lima elemen yaitu 1 sampai 5. Melalui perulangan for, program menampilkan setiap elemen array satu per satu ke layar. Variabel i digunakan sebagai indeks untuk mengakses elemen ke-0 hingga ke-4 pada array. Setiap iterasi akan mencetak posisi elemen (Element ke-i) beserta nilainya. Setelah semua elemen ditampilkan, program selesai dijalankan.
