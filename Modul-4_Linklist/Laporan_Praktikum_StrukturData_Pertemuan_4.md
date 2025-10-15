@@ -194,31 +194,31 @@ int main() {
 
 untuk opsi 1
 > Output
-> ![Screenshot Guided Nomor 1 poin 1](P4output/Guided4Nomor1Poin1.PNG)
+> ![Screenshot Guided Nomor 1 poin 1](P4output/Guided4Nomor1poin1.PNG)
 
 Pilihan ini menjalankan fungsi insertDepan(), yaitu untuk menambahkan node baru di awal linked list. Program meminta pengguna memasukkan data integer, kemudian membuat node baru dengan nilai tersebut, dan mengatur agar node baru menjadi head (elemen pertama). Jika sebelumnya sudah ada data, maka node baru akan menunjuk ke node lama sebagai next.
 
 untuk opsi 2
 > Output
-> ![Screenshot Guided Nomor 1 poin 2](P4output/Guided4Nomor1Poin2.PNG)
+> ![Screenshot Guided Nomor 1 poin 2](P4output/Guided4Nomor1poin2.PNG)
 
 Case ini menjalankan fungsi insertBelakang(), yang menambahkan node baru di akhir linked list. Program akan mencari node terakhir dengan cara menelusuri list hingga menemukan node yang next-nya bernilai nullptr, kemudian menambahkan node baru di situ. Jika list masih kosong, node baru langsung menjadi head.
 
 untuk opsi 3
 > Output
-> ![Screenshot Guided Nomor 1 poin 3](P4output/Guided4Nomor1Poin3.PNG)
+> ![Screenshot Guided Nomor 1 poin 3](P4output/Guided4Nomor1poin3.PNG)
 
 Pada case ini dipanggil fungsi insertSetelah(). Program meminta dua input: data target dan data baru. Fungsi akan mencari node yang berisi data target, lalu menyisipkan node baru setelah node tersebut. Jika data target tidak ditemukan, akan muncul pesan bahwa data tidak ditemukan.
 
 untuk opsi 4
 > Output
-> ![Screenshot Guided Nomor 1 poin 4](P4output/Guided4Nomor1Poin4.PNG)
+> ![Screenshot Guided Nomor 1 poin 4](P4output/Guided4Nomor1poin4.PNG)
 
 Case ini menggunakan fungsi hapusNode() untuk menghapus node berdasarkan nilai datanya. Program mencari node yang berisi data yang ingin dihapus. Jika data tersebut berada di head, maka head diganti dengan node berikutnya. Jika berada di tengah atau akhir, maka pointer next dari node sebelumnya diubah agar melewati node yang dihapus.
 
 untuk opsi 5
 > Output
-> ![Screenshot Guided Nomor 1 poin 5](P4output/Guided4Nomor1Poin5.PNG)
+> ![Screenshot Guided Nomor 1 poin 5](P4output/Guided4Nomor1poin5.PNG)
 
 Case ini menjalankan fungsi updateNode(), yang digunakan untuk mengubah nilai data dari node tertentu. Program meminta dua input: data lama dan data baru. Kemudian fungsi mencari node yang berisi data lama dan menggantinya dengan data baru. Jika tidak ditemukan, akan ditampilkan pesan kesalahan.
 
@@ -321,19 +321,19 @@ int main() {
 
 ### Opsi 1 Tambah Antrian
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 1](P4output/Unguided4Nomor1Poin1.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 1](P4output/Unguided4Nomor1poin1.PNG)
 
 Pada bagian ini, program meminta pengguna untuk memasukkan nama pembeli dan pesanan. Data tersebut kemudian dikirim ke fungsi tambahAntrian(). Fungsi ini membuat node baru bertipe Pembeli dan menambahkannya ke akhir antrian. Jika antrian masih kosong, node baru akan menjadi elemen pertama (front) sekaligus terakhir (rear). Jika sudah ada antrian sebelumnya, maka node baru akan dihubungkan ke elemen terakhir dan rear diperbarui agar menunjuk ke node tersebut. Setelah itu, muncul pesan bahwa antrian berhasil ditambahkan.
 
 ### Opsi 2 Layani Antrian
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 2](P4output/Unguided4Nomor1Poin2.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 2](P4output/Unguided4Nomor1poin2.PNG)
 
 Bagian ini memanggil fungsi layaniAntrian() untuk melayani pembeli paling depan. Program akan menampilkan nama dan pesanan pembeli yang sedang dilayani, lalu menghapusnya dari antrian dengan cara memindahkan pointer front ke elemen berikutnya. Jika setelah dihapus antrian menjadi kosong, maka rear juga diset ke nullptr. Jika antrian kosong sejak awal, program menampilkan pesan bahwa tidak ada antrian yang bisa dilayani.
 
 ### Opsi 3 Tampilkan Antrian
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 3](P4output/Unguided4Nomor1Poin3.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 3](P4output/Unguided4Nomor1poin3.PNG)
 
 Case ini memanggil fungsi tampilkanAntrian(). Fungsi tersebut akan menelusuri seluruh node mulai dari front hingga rear, menampilkan nama dan pesanan setiap pembeli yang masih menunggu giliran. Jika antrian kosong, program akan menampilkan pesan “Antrian kosong.”
 
