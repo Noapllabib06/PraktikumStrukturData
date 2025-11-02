@@ -382,26 +382,26 @@ int main() {
 
 ### Opsi 1 Tambah Antrian
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 1](P5output/Unguided5Nomor1poin1.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 1](P5output/Unguided5Nomor1Poin1.PNG)
 
 Fungsi ini digunakan untuk menambahkan pembeli baru ke dalam antrian. Proses dimulai dengan membuat node baru yang berisi nama dan pesanan pembeli, kemudian node tersebut dihubungkan ke bagian belakang antrian menggunakan pointer belakang. Jika antrian masih kosong, node baru akan menjadi elemen pertama yang ditunjuk oleh pointer depan dan belakang. Fungsi ini mencerminkan operasi enqueue pada konsep antrian.
 
 
 ### Opsi 2 Layani Antrian
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 2](P5output/Unguided5Nomor1poin2.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 2](P5output/Unguided5Nomor1Poin2.PNG)
 
 Fungsi ini berperan untuk melayani atau menghapus pembeli yang berada di urutan pertama dalam antrian. Mekanismenya dilakukan dengan menggeser pointer depan ke node berikutnya, kemudian menghapus node lama yang telah selesai dilayani. Jika setelah penghapusan antrian menjadi kosong, maka pointer belakang juga diatur menjadi nullptr. Fungsi ini merepresentasikan operasi dequeue dalam struktur data antrian.
 
 ### Opsi 3 Tampilkan Antrian
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 3](P5output/Unguided5Nomor1poin3.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 3](P5output/Unguided5Nomor1Poin3.PNG)
 
 Fungsi ini menampilkan seluruh pembeli beserta pesanannya dari posisi terdepan hingga terakhir dalam antrian. Prosesnya dilakukan dengan menelusuri setiap node menggunakan perulangan hingga pointer next bernilai nullptr. Output ditampilkan secara berurutan sehingga pengguna dapat melihat kondisi antrian secara keseluruhan. Fungsi ini membantu memantau isi antrian secara dinamis.
 
 ### Opsi 4 Cari Pembeli
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 4](P5output/Unguided5Nomor1poin4.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 4](P5output/Unguided5Nomor1Poin4.PNG)
 
 Fungsi ini digunakan untuk mencari data pembeli berdasarkan nama yang dimasukkan oleh pengguna. Program akan menelusuri setiap node dan membandingkan nilai nama pada setiap node dengan input pencarian. Jika ditemukan, sistem menampilkan informasi pembeli beserta pesanannya, sedangkan jika tidak ditemukan maka akan muncul pesan bahwa data tidak ada dalam antrian. Fungsi ini memudahkan pengguna dalam memeriksa keberadaan pembeli tertentu tanpa mengubah isi antrian.
 
@@ -661,31 +661,31 @@ int main() {
 
 ### Opsi 1 Tambah Buku
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 1](P5output/Unguided5Nomor2poin1.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 1](P5output/Unguided5Nomor2Poin1.PNG)
 
 Fungsi ini digunakan untuk menambahkan data buku baru ke dalam daftar. Program meminta pengguna memasukkan ISBN, judul, dan penulis, kemudian memanggil fungsi tambahBuku(). Fungsi tersebut membuat node baru bertipe elmlist dan menambahkannya di bagian akhir linked list. Jika daftar buku masih kosong, node baru menjadi elemen pertama. Setelah data tersimpan, sistem menampilkan pesan bahwa buku berhasil ditambahkan..
 
 ### Opsi 2 Hapus Buku
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 2](P5output/Unguided5Nomor2poin2.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 2](P5output/Unguided5Nomor2Poin2.PNG)
 
 Opsi ini memanggil fungsi hapusBuku() untuk menghapus data buku berdasarkan ISBN yang dimasukkan pengguna. Program terlebih dahulu mencari node dengan ISBN yang sesuai menggunakan cariBukuByISBN(). Jika ditemukan, node tersebut dihapus dari daftar dan memori dialokasikan ulang menggunakan dealokasi(). Jika tidak ditemukan, muncul pesan kesalahan bahwa data tidak tersedia.
 
 ### Opsi 3 Perbarui Buku
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 3](P5output/Unguided5Nomor2poin3.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 3](P5output/Unguided5Nomor2Poin3.PNG)
 
 Pada bagian ini, fungsi updateBuku() digunakan untuk memperbarui data buku yang sudah ada. Program mencari buku berdasarkan ISBN, lalu menampilkan judul dan penulis lama. Setelah itu, pengguna diminta memasukkan data baru untuk menggantinya. Jika ISBN ditemukan, informasi buku berhasil diperbarui, namun jika tidak ditemukan, sistem menampilkan pesan error.
 
 ### Opsi 4 Tampilkan Buku
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 4](P5output/Unguided5Nomor2poin4.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 4](P5output/Unguided5Nomor2Poin4.PNG)
 
 Fungsi lihatBuku() menampilkan seluruh daftar buku yang ada di dalam linked list. Setiap node ditampilkan secara berurutan beserta ISBN, judul, dan penulisnya. Jika daftar masih kosong, maka akan muncul pesan bahwa belum ada data yang tersimpan. Fungsi ini membantu pengguna melihat keseluruhan isi koleksi buku dengan mudah.
 
 ### Opsi 5 Cari Buku
 >Output
-> ![Screenshot Unguided Nomor 1 Opsi 5](P5output/Unguided5Nomor2poin5.PNG)
+> ![Screenshot Unguided Nomor 1 Opsi 5](P5output/Unguided5Nomor2Poin5.PNG)
 
 Opsi ini menjalankan fungsi cariDanTampilkanBuku() yang memungkinkan pengguna mencari buku berdasarkan judul, penulis, atau ISBN. Program akan menelusuri setiap node dan menampilkan semua buku yang mengandung kata kunci yang dicari. Jika tidak ditemukan hasil yang sesuai, maka sistem akan menampilkan pesan bahwa data tidak ditemukan.
 

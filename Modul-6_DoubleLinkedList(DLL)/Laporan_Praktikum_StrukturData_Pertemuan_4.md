@@ -262,7 +262,7 @@ int main() {
 
 untuk opsi 1
 > Output
-> ![Screenshot Guided Nomor 1 poin 1](P6output/Guided6Nomor1poin1.PNG)
+> ![Screenshot Guided Nomor 1 poin 1](P6output/Guided6Nomor1Poin1.PNG)
 
 Use case ini menjalankan fungsi insertdepan(), yaitu untuk menambahkan node baru di bagian awal dari double linked list.
 Program meminta input data dari pengguna, lalu membuat node baru yang next-nya menunjuk ke head lama.
@@ -272,7 +272,7 @@ Fungsi ini berguna untuk menambah data prioritas tinggi di bagian awal struktur.
 
 untuk opsi 2
 > Output
-> ![Screenshot Guided Nomor 1 poin 2](P6output/Guided6Nomor1poin2.PNG)
+> ![Screenshot Guided Nomor 1 poin 2](P6output/Guided6Nomor1Poin2.PNG)
 
 Use case ini menggunakan fungsi insertbelakang() untuk menambahkan node baru di akhir linked list.
 Node baru dihubungkan dengan node tail sebelumnya, lalu pointer tail diperbarui menunjuk ke node baru.
@@ -282,7 +282,7 @@ Dengan cara ini, struktur data dapat bertambah dinamis dari belakang tanpa gangg
 
 untuk opsi 3
 > Output
-> ![Screenshot Guided Nomor 1 poin 3](P6output/Guided6Nomor1poin3.PNG)
+> ![Screenshot Guided Nomor 1 poin 3](P6output/Guided6Nomor1Poin3.PNG)
 
 Use case ini menjalankan fungsi insertsetelah(), yang menambahkan node setelah node tertentu berdasarkan nilai target.
 Program meminta dua input: data target dan data baru yang ingin disisipkan.
@@ -292,7 +292,7 @@ Fungsi ini sangat berguna untuk penyisipan data di posisi tengah tanpa perlu men
 
 untuk opsi 8
 > Output
-> ![Screenshot Guided Nomor 1 poin 8](P6output/Guided6Nomor1poin8.PNG)
+> ![Screenshot Guided Nomor 1 poin 8](P6output/Guided6Nomor1Poin8.PNG)
 
 Use case ini memanggil fungsi tampildepan(), yang menampilkan seluruh isi linked list mulai dari head ke tail.
 Program melakukan iterasi maju dengan menggunakan pointer next hingga mencapai nullptr.
@@ -302,7 +302,7 @@ Fungsi ini membantu pengguna untuk melihat kondisi terkini dari struktur data se
 
 untuk opsi 9
 > Output
-> ![Screenshot Guided Nomor 1 poin 9](P6output/Guided6Nomor1poin9.PNG)
+> ![Screenshot Guided Nomor 1 poin 9](P6output/Guided6Nomor1Poin9.PNG)
 
 Fungsi tampilbelakang() digunakan untuk menampilkan data dari tail ke head menggunakan pointer prev.
 Dengan kemampuan traversal dua arah, Double Linked List memungkinkan penelusuran terbalik dengan mudah.
@@ -312,7 +312,7 @@ Fungsi ini menunjukkan salah satu keunggulan utama Double Linked List dibanding 
 
 untuk opsi 4
 > Output
-> ![Screenshot Guided Nomor 1 poin 4](P6output/Guided6Nomor1poin4.PNG)
+> ![Screenshot Guided Nomor 1 poin 4](P6output/Guided6Nomor1Poin4.PNG)
 
 Fungsi hapusdepan() digunakan untuk menghapus node yang berada di bagian awal (head) dari linked list.
 Node pertama dihapus, dan head diperbarui untuk menunjuk ke node berikutnya.
@@ -322,7 +322,7 @@ Fungsi ini menggambarkan operasi dequeue pada struktur antrian.
 
 untuk opsi 5
 > Output
-> ![Screenshot Guided Nomor 1 poin 5](P6output/Guided6Nomor1poin5.PNG)
+> ![Screenshot Guided Nomor 1 poin 5](P6output/Guided6Nomor1Poin5.PNG)
 
 Pada use case ini dijalankan fungsi hapusbelakang(), yaitu menghapus node yang berada di akhir (tail) linked list.
 tail diperbarui untuk menunjuk ke node sebelumnya, dan node terakhir dihapus dari memori.
@@ -332,7 +332,7 @@ Dengan mekanisme pointer dua arah, proses penghapusan dapat dilakukan tanpa perl
 
 untuk opsi 6
 > Output
-> ![Screenshot Guided Nomor 1 poin 6](P6output/Guided6Nomor1poin6.PNG)
+> ![Screenshot Guided Nomor 1 poin 6](P6output/Guided6Nomor1Poin6.PNG)
 
 Fungsi hapusdata() bertugas menghapus node dengan nilai tertentu yang dimasukkan oleh pengguna.
 Program menelusuri list untuk menemukan data target, lalu menyesuaikan pointer next dan prev agar node tersebut terlepas.
@@ -342,7 +342,7 @@ Fitur ini sangat penting untuk pemeliharaan data yang spesifik di dalam struktur
 
 untuk opsi 7
 > Output
-> ![Screenshot Guided Nomor 1 poin 7](P6output/Guided6Nomor1poin7.PNG)
+> ![Screenshot Guided Nomor 1 poin 7](P6output/Guided6Nomor1Poin7.PNG)
 
 Use case ini menggunakan fungsi updatedata(), yang berfungsi mengubah nilai lama menjadi nilai baru.
 Program meminta dua input, yaitu oldData dan newData.
@@ -585,7 +585,9 @@ int main() {
 >Output
 > ![Screenshot Unguided Nomor 1](P6output/Unguided6Nomor1Gambar1.PNG)
 
-Pada bagian ini, program meminta pengguna untuk memasukkan nama pembeli dan pesanan. Data tersebut kemudian dikirim ke fungsi tambahAntrian(). Fungsi ini membuat node baru bertipe Pembeli dan menambahkannya ke akhir antrian. Jika antrian masih kosong, node baru akan menjadi elemen pertama (front) sekaligus terakhir (rear). Jika sudah ada antrian sebelumnya, maka node baru akan dihubungkan ke elemen terakhir dan rear diperbarui agar menunjuk ke node tersebut. Setelah itu, muncul pesan bahwa antrian berhasil ditambahkan.
+Program Unguided 2 ini merupakan implementasi Abstract Data Type (ADT) pada struktur data Double Linked List menggunakan bahasa C++. ADT digunakan untuk memisahkan antara definisi struktur data dan implementasi operasionalnya, sehingga program lebih modular dan mudah dikembangkan. Pada bagian header (.h), didefinisikan tipe data Node dan List yang merepresentasikan elemen dan keseluruhan daftar ganda. Setiap node memiliki dua pointer (next dan prev) yang memungkinkan penelusuran maju maupun mundur. Selain itu, fungsi dasar seperti create list, insert, delete, dan display juga dideklarasikan di dalamnya. Dengan pendekatan ini, program memiliki rancangan yang terstruktur dan mudah digunakan kembali pada konteks lain tanpa mengubah logika internalnya.
+Pada bagian implementasi (.cpp), setiap fungsi dari header direalisasikan untuk melakukan operasi pada list secara langsung. Misalnya, fungsi insert digunakan untuk menambahkan node baru baik di depan, belakang, maupun setelah elemen tertentu, sedangkan delete berfungsi menghapus node berdasarkan posisi atau nilai. Fungsi display menampilkan seluruh isi list untuk memastikan hasil operasi berjalan sesuai harapan. Program utama (main.cpp) kemudian berperan sebagai interface bagi pengguna untuk mengakses fungsi-fungsi tersebut melalui menu pilihan. Dengan menggunakan konsep ADT, pemisahan antara logika dan struktur menjadikan kode lebih bersih, terorganisir, dan mudah diuji. Pendekatan ini juga mencerminkan prinsip encapsulation dalam pemrograman berorientasi objek.
+
 
 
 ## Referensi
@@ -593,3 +595,7 @@ Pada bagian ini, program meminta pengguna untuk memasukkan nama pembeli dan pesa
 1. Samala, A. D., Fajri, B. R., & Ranuarja, F. (2021). PEMROGRAMAN C++. UNP PRESS. https://books.google.com/books?hl=id&lr=&id=49ZbEAAAQBAJ&oi=fnd&pg=PA2&dq=pemrograman+c%2B%2B&ots=4sYIx_JYCx&sig=ouhrRQNOGTjAM3F2phz0_RIeUjY
 
 2. Indahyanti, U., & Rahmawati, Y. (2020). Buku Ajar Algoritma Dan Pemrograman Dalam Bahasa C++. Umsida Press, 1-146. https://press.umsida.ac.id/index.php/umsidapress/article/view/978-623-6833-67-4
+
+3. Guntara, R. G. (2023). ALGORITMA DAN PEMROGRAMAN DASAR: Menggunakan Bahasa Pemrograman C++ dengan Contoh Kasus Aplikasi untuk Bisnis dan Manajemen. CV. Ruang Tentor. https://books.google.com/books?hl=id&lr=&id=NO_LEAAAQBAJ&oi=fnd&pg=PP1&dq=bahasa+pemrograman+c%2B%2B+array&ots=2Fy9t5bo-6&sig=IEpObWmOGnSM-_hcwcGMRc3y-2A
+
+4. Anita Sindar, R. M. S. (2019). Struktur Data Dan Algoritma Dengan C++ (Vol. 1). CV. AA. RIZKY. https://books.google.com/books?hl=id&lr=&id=GP_ADwAAQBAJ&oi=fnd&pg=PA23&dq=bahasa+pemrograman+c%2B%2B+pointer&ots=86j8Vl4PeN&sig=Y8PH3MxqztsFCr6HnjJIKfS--ow
