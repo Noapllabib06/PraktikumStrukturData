@@ -583,7 +583,7 @@ int main() {
 > ![Screenshot Unguided Nomor 1](P6output/Unguided6Nomor1Gambar1.PNG)
 
 >Output
-> ![Screenshot Unguided Nomor 1](P6output/Unguided6Nomor1Gambar1.PNG)
+> ![Screenshot Unguided Nomor 1](P6output/Unguided6Nomor1Gambar2.PNG)
 
 Program Unguided 2 ini merupakan implementasi Abstract Data Type (ADT) pada struktur data Double Linked List menggunakan bahasa C++. ADT digunakan untuk memisahkan antara definisi struktur data dan implementasi operasionalnya, sehingga program lebih modular dan mudah dikembangkan. Pada bagian header (.h), didefinisikan tipe data Node dan List yang merepresentasikan elemen dan keseluruhan daftar ganda. Setiap node memiliki dua pointer (next dan prev) yang memungkinkan penelusuran maju maupun mundur. Selain itu, fungsi dasar seperti create list, insert, delete, dan display juga dideklarasikan di dalamnya. Dengan pendekatan ini, program memiliki rancangan yang terstruktur dan mudah digunakan kembali pada konteks lain tanpa mengubah logika internalnya.
 Pada bagian implementasi (.cpp), setiap fungsi dari header direalisasikan untuk melakukan operasi pada list secara langsung. Misalnya, fungsi insert digunakan untuk menambahkan node baru baik di depan, belakang, maupun setelah elemen tertentu, sedangkan delete berfungsi menghapus node berdasarkan posisi atau nilai. Fungsi display menampilkan seluruh isi list untuk memastikan hasil operasi berjalan sesuai harapan. Program utama (main.cpp) kemudian berperan sebagai interface bagi pengguna untuk mengakses fungsi-fungsi tersebut melalui menu pilihan. Dengan menggunakan konsep ADT, pemisahan antara logika dan struktur menjadikan kode lebih bersih, terorganisir, dan mudah diuji. Pendekatan ini juga mencerminkan prinsip encapsulation dalam pemrograman berorientasi objek.
