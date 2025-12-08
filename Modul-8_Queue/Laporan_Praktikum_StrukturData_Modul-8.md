@@ -241,7 +241,7 @@ int main() {
 > Output
 > ![Screenshot Unguided 8 Nomor 1](P8output/Unguided8Nomor1.PNG)
 
-Queue ini bekerja dengan cara head dan tail maju tanpa menggeser isi array, sehingga setiap kali enqueue, elemen baru ditambahkan pada posisi tail yang terus bertambah, sedangkan setiap kali dequeue, head berpindah ke indeks berikutnya sehingga elemen di depan dianggap keluar dari queue tanpa perlu memindahkan data lain; akibatnya urutan output terbentuk secara alami: memasukkan 5 menghasilkan [5], memasukkan 2 menjadi [5,2], memasukkan 7 menjadi [5,2,7], lalu saat dequeue pertama, 5 diabaikan dan queue menjadi [2,7], dequeue berikutnya menghapus 2 sehingga menyisakan [7], enqueue 4 menjadikannya [7,4], dan dequeue terakhir menghapus 7 sehingga tersisa [4], persis dengan urutan output yang kamu minta.
+Queue ini bekerja dengan cara head dan tail maju tanpa menggeser isi array, sehingga setiap kali enqueue, elemen baru ditambahkan pada posisi tail yang terus bertambah, sedangkan setiap kali dequeue, head berpindah ke indeks berikutnya sehingga elemen di depan dianggap keluar dari queue tanpa perlu memindahkan data lain; akibatnya urutan output terbentuk secara alami: memasukkan 5 menghasilkan [5], memasukkan 2 menjadi [5,2], memasukkan 7 menjadi [5,2,7], lalu saat dequeue pertama, 5 diabaikan dan queue menjadi [2,7], dequeue berikutnya menghapus 2 sehingga menyisakan [7], enqueue 4 menjadikannya [7,4], dan dequeue terakhir menghapus 7 sehingga tersisa [4].
 
 ### SOAL 2
 > Output
