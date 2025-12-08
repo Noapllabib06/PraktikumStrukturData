@@ -590,11 +590,11 @@ Kode tersebut mengimplementasikan **multilinked list dua tingkat** yang membentu
 
 ### SOAL 2
 > Output
-> ![Soal Unguided 11 Nomor 2](S11/S11Nomor2.1.png.PNG)
+> ![Soal Unguided 11 Nomor 2](S11/S11Nomor2-1.PNG)
 > Output
-> ![Soal Unguided 11 Nomor 2](S11/S11Nomor2.2.png.PNG)
+> ![Soal Unguided 11 Nomor 2](S11/S11Nomor2-2.PNG)
 > Output
-> ![Soal Unguided 11 Nomor 2](S11/S11Nomor2.3.png.PNG)
+> ![Soal Unguided 11 Nomor 2](S11/S11Nomor2-3.PNG)
 
 #### multilist.h
 
@@ -859,9 +859,8 @@ int main() {
 #### OUTPUT
 
 > Output
-> ![Screenshot Unguided 8 Nomor 2](P8output/Unguided8Nomor2.1.PNG)
-> Output
-> ![Screenshot Unguided 8 Nomor 2](P8output/Unguided8Nomor2.2.PNG)
+> ![Screenshot Unguided 11 Nomor 2](P11output/Unguided11Nomor2-1.PNG)
+> ![Screenshot Unguided 11 Nomor 2](P11output/Unguided11Nomor2-2.PNG)
 
 Kode tersebut membangun sebuah circular singly linked list yang menyimpan data mahasiswa dalam node bertipe `ElmList`, di mana setiap node berisi informasi lengkap mahasiswa seperti nama, NIM, jenis kelamin, dan IPK, serta pointer `next` yang selalu terhubung melingkar sehingga elemen terakhir menunjuk kembali ke elemen pertama. Header mendefinisikan struktur data, fungsi dasar, dan operasi manipulasi list, sementara implementasinya menyediakan mekanisme alokasi memori, penyisipan node di awal, akhir, maupun setelah node tertentu, serta penghapusan node dengan penyesuaian pointer agar sifat circular tetap terjaga. Fungsi pencarian bekerja dengan menelusuri list secara melingkar hingga kembali ke node awal, sedangkan fungsi cetak menampilkan seluruh data mahasiswa dalam format rapi menggunakan loop `do-while` yang khas untuk circular list. Pada bagian `main`, program membuat list kosong, memasukkan beberapa mahasiswa menggunakan kombinasi `insertFirst`, `insertLast`, dan `insertAfter`, lalu menampilkan seluruh data yang berhasil disimpan. Keseluruhan kode memperlihatkan implementasi struktur list melingkar yang efisien untuk operasi traversal berulang tanpa kondisi akhir, sambil mempertahankan integritas list lewat pengaturan pointer yang konsisten pada setiap operasi insert dan delete.
 

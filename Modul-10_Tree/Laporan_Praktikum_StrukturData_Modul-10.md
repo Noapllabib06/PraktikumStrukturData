@@ -190,7 +190,7 @@ Program ini membangun **Binary Search Tree** lengkap dengan operasi insert, sear
 ## UNGUIDED
 ### SOAL 1
 > Output
-> ![Soal Unguided 8 Nomor 1](S8/S8Nomor1.PNG)
+> ![Soal Unguided 10 Nomor 1](S10/S10Nomor1.PNG)
 
 #### bstree.h
 
@@ -304,7 +304,7 @@ Program ini membangun struktur Binary Search Tree dengan beberapa fungsi utama: 
 
 ### SOAL 2
 > Output
-> ![Soal Unguided 10 Nomor 2](S10/S10Nomor2.PNG)
+> ![Soal Unguided 10 Nomor 2](S10/S10Nomor2.png)
 
 #### bstree.h
 
@@ -459,7 +459,7 @@ Program ini menyusun Binary Search Tree yang dapat melakukan penyisipan data, pe
 
 ### SOAL 3
 > Output
-> ![Soal Unguided 10 Nomor 3](S10/S10Nomor3.PNG)
+> ![Soal Unguided 10 Nomor 3](S10/S10Nomor3.png)
 
 #### bstree.h
 
